@@ -6,3 +6,7 @@ It's architected to be easily tested
 ## Test
 
 It also uses Espresso UI test framework.
+
+## TODO
+
+Add Dagger to inject dependencies in order to test presenters in isolation
