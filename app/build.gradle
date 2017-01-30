@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'realm-android'
+
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.example.alejofila.redditconsumer"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", "\"http://www.reddit.com\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile(libs.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestCompile libs.espresso_intents
+    compile libs.appcompat
+    compile libs.retrofit
+    compile libs.retrofit_gson_adapter
+    compile libs.retrofit_rx_adapter
+
+    compile libs.gson
+    compile libs.rxjava
+    compile libs.rxandroid
+    compile libs.picasso
+    compile libs.recyclerview
+    compile libs.butterknife
+    compile libs.cardview
+    annotationProcessor libs.butterknife_annotation
+
+    testCompile libs.junit
+
+
+}

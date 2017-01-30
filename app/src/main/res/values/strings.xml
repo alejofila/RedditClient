@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RedditConsumer</string>
+    <string name="error_no_posts">Sorry we couldnt fetch the posts</string>
+    <string name="subscribers">"subscribers: %1$d"</string>
+</resources>
